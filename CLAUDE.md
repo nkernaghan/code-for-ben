@@ -1,23 +1,26 @@
 # Claude Code Brain
 
-Skills, agents, and commands for Claude Code. Drop these into your `~/.claude/` directory to use them.
+Complete collection of skills, agents, commands, and MCP server configs for Claude Code.
 
 ## Setup
 
 ```bash
-# Clone the repo
+# Clone
 git clone https://github.com/nkernaghan/code-for-ben.git
+cd code-for-ben
 
-# Copy skills into your Claude config
-cp -R code-for-ben/skills/ ~/.claude/skills/
-cp -R code-for-ben/agents/ ~/.claude/agents/
-cp -R code-for-ben/commands/ ~/.claude/commands/
+# Copy skills, agents, and commands
+cp -R skills/ ~/.claude/skills/
+cp -R agents/ ~/.claude/agents/
+cp -R commands/ ~/.claude/commands/
+
+# Copy MCP config (edit API keys first)
+cp mcp-servers.json ~/.claude/.mcp.json
 ```
 
 ## What's Included
 
-### Skills (46)
-Drop-in skill modules that activate automatically based on context.
+### Skills (51)
 
 | Category | Skills |
 |----------|--------|
@@ -30,18 +33,32 @@ Drop-in skill modules that activate automatically based on context.
 | **Trading** | trading-bot-architect, quant_analyst |
 | **DevOps** | devops-engineer, performance-optimizer |
 | **Obsidian** | obsidian-markdown, obsidian-cli, obsidian-bases, json-canvas |
-| **Other** | skill-creator, writing-skills, code-reviewer, reviewer, security_guard, builder, orchestrator, automation_engineer, newsletter-builder, curriculum-architect, sports-analyst, defuddle |
+| **Code Quality** | code-reviewer, reviewer, security_guard |
+| **Other** | skill-creator, writing-skills, builder, orchestrator, automation_engineer, newsletter-builder, curriculum-architect, sports-analyst, defuddle |
 
 ### Agents (14)
-Specialized sub-agents for the Agent tool.
+
+Specialized sub-agents for the Agent tool:
 
 - backend-architect, code-review-agent, context-manager, database-admin, debugger, frontend-developer, plan-reviewer, python-pro, research-orchestrator, search-specialist, task-decomposition-expert, technical-researcher, technical-writer, ui-ux-designer
 
 ### Commands (17)
-Slash commands (`/build`, `/review`, `/security`, `/plan`, etc.)
+
+Slash commands: `/bot`, `/brainstorm`, `/build`, `/curriculum`, `/deploy`, `/dflow`, `/docs`, `/newsletter`, `/obsidian`, `/optimize`, `/quant`, `/research`, `/review`, `/security`, `/sports`, `/svm`, `/ui`
+
+### MCP Servers
+
+`mcp-servers.json` — template config for:
+- **fetch** — web fetching
+- **playwright** — browser automation and testing
+- **memory** — persistent memory via knowledge graph
+- **n8n** — workflow automation (requires your own API key)
 
 ## Keeping Updated
-Pull latest and re-copy:
+
 ```bash
-cd code-for-ben && git pull && cp -R skills/ ~/.claude/skills/ && cp -R agents/ ~/.claude/agents/ && cp -R commands/ ~/.claude/commands/
+cd code-for-ben && git pull
+cp -R skills/ ~/.claude/skills/
+cp -R agents/ ~/.claude/agents/
+cp -R commands/ ~/.claude/commands/
 ```
