@@ -5,3 +5,7 @@
 node_modules/
 .DS_Store
 .claude/settings.local.json
+
+# Never commit live MCP config (use mcp-servers.json template instead)
+.mcp.json
+.mcp.json.backup-*
